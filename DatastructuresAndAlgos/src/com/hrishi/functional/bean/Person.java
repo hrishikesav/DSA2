@@ -5,7 +5,7 @@ public class Person {
 	private String name;
 	
 	private Gender gender;
-
+	
 	public Person(String name, Gender gender) {
 		super();
 		this.name = name;
