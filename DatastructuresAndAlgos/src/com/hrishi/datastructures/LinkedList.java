@@ -4,7 +4,7 @@ import com.hrishi.datastructures.common.Node;
 
 public class LinkedList<T> {
 	
-	Node head;
+	public Node head;
 
 	public LinkedList() {
 		head = null;
@@ -16,8 +16,11 @@ public class LinkedList<T> {
 		if(head == null) {
 			head = newNode;
 		} else {
-			newNode.next = head;
-			head = newNode;
+			Node start = head;
+			while(start.next != null) {
+				start = start.next;
+			}
+			start.next = newNode;
 		}
 	}
 	
@@ -28,7 +31,7 @@ public class LinkedList<T> {
 	public void printValues() {
 		Node n = head;
 		while(n != null) {
-			System.out.println(n.value);
+			System.out.print(n.value + " ");
 			n = n.next;
 		}
 	}
