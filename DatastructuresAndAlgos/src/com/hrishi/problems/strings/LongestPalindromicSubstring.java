@@ -4,8 +4,9 @@ public class LongestPalindromicSubstring {
 
 	public static void main(String[] args) {
 		
+		String s = "agbdba";
 //		String s = "abccbde";
-		String s = "racecar";
+//		String s = "racecar";
 		System.out.print(longestPalindromicSubstring(s));
 		System.out.println();
 		System.out.print(longestPalindromeString(s));
