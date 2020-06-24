@@ -39,7 +39,6 @@ public class DFS {
 		
 		int root = 2;
 		System.out.println("DFS strating from root node - " + root);
-		visited[2] = true;
 		printAllNodes(root);
 		
 	}
