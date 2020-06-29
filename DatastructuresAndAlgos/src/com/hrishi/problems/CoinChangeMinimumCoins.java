@@ -14,7 +14,7 @@ public class CoinChangeMinimumCoins {
 	public static void main(String[] args) {
 
 		int[] coins = { 1, 2, 3 };
-		int num = 5;
+		int num = 10;
 		List<Integer> result = new ArrayList<>();
 
 		coinChange(coins, num, num, result, coins.length - 1);
@@ -22,7 +22,7 @@ public class CoinChangeMinimumCoins {
 	}
 
 	static void coinChange(int[] coins, int num, int remSum, List<Integer> result, int level) {
-
+		
 		if (remSum == 0) {
 			for (int i = 0; i < result.size(); i++) {
 				System.out.print(result.get(i) + " ");
@@ -30,8 +30,12 @@ public class CoinChangeMinimumCoins {
 			return;
 		}
 
-		if (remSum - coins[level] < 0 && level > 0) {
+		while (remSum - coins[level] < 0) {
 			level--;
+			if(level < 0) {
+				System.out.println("Combination not possible.");
+				return;
+			}
 		}
 
 		int nAdd = coins[level];
